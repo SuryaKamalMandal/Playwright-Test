@@ -144,3 +144,30 @@ test('Updating the Password', async ({ page }) => {
 
 });
 
+test('Updating the Display Name', async ({ page }) => {
+  const userDetails = {
+    email:"surya.k+p4@w3dev.email",
+    password:"suryasurya",
+    displayName:"Surya Mandal"
+  }
+  
+  await page.goto('https://dash.appreviewbot.com/auth/login?redirect_to=%2F');
+  await page.getByRole('textbox', { name: 'Email' }).click();
+  await page.getByRole('textbox', { name: 'Email' }).fill(userDetails.email);
+  await page.getByRole('button', { name: 'Continue' }).click();
+  await page.getByRole('button', { name: 'Login with Password instead' }).click();
+  await page.getByRole('button', { name: 'Continue with Password' }).click();
+  await page.getByRole('textbox', { name: 'Password' }).click();
+  await page.getByRole('textbox', { name: 'Password' }).fill(userDetails.password);
+  await page.getByRole('button', { name: 'Sign In' }).click();
+  await page.waitForTimeout(2000);
+  await expect(page.getByText('Track and manage all your app reviews in one place')).toBeVisible();
+  await page.waitForLoadState('domcontentloaded');
+  await page.getByRole('link', { name: 'Account', exact: true }).click();
+  await page.getByRole('textbox', { name: 'Display Name' }).click();
+  await page.getByRole('textbox', { name: 'Display Name' }).fill('');
+  await page.getByRole('textbox', { name: 'Display Name' }).fill(userDetails.displayName);
+  await page.getByRole('button', { name: 'Save Changes' }).click();
+  await page.waitForTimeout(2000);
+  await expect(page.getByText('Profile updated successfully')).toBeVisible();
+});
