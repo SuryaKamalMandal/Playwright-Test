@@ -171,3 +171,77 @@ test('Updating the Display Name', async ({ page }) => {
   await page.waitForTimeout(2000);
   await expect(page.getByText('Profile updated successfully')).toBeVisible();
 });
+
+test('Navigation through the Dashboard', async ({ page }) => {
+  const userDetails = {
+    email:"surya.k+p4@w3dev.email",
+    password:"suryasurya"
+  }
+  await page.goto('https://dash.appreviewbot.com/auth/login?redirect_to=%2F');
+  await page.getByRole('textbox', { name: 'Email' }).click();
+  await page.getByRole('textbox', { name: 'Email' }).fill(userDetails.email);
+  await page.getByRole('button', { name: 'Continue' }).click();
+  await page.getByRole('button', { name: 'Login with Password instead' }).click();
+  await page.getByRole('button', { name: 'Continue with Password' }).click();
+  await page.getByRole('textbox', { name: 'Password' }).click();
+  await page.getByRole('textbox', { name: 'Password' }).fill(userDetails.password);
+  await page.getByRole('button', { name: 'Sign In' }).click();
+  await page.waitForTimeout(2000);
+  await expect(page.getByText('Track and manage all your app reviews in one place')).toBeVisible();
+  await page.waitForLoadState('domcontentloaded');
+  await page.waitForTimeout(2000);
+  await page.getByRole('link', { name: 'Reviews' }).click();
+  await page.waitForTimeout(2000);
+  await expect(page.getByText('Select an app to view its reviews')).toBeVisible();
+  await page.waitForTimeout(2000);
+  await page.getByRole('link', { name: 'Team' }).click();
+  await page.waitForTimeout(2000);
+  await expect(page.getByText('Manage your team members and invitations')).toBeVisible();
+});
+
+test('Updating the Organization Details', async ({ page }) => {
+  const userDetails = {
+    email:"surya.k+p4@w3dev.email",
+    password:"suryasurya",
+    organizationName:"W3Dev",
+    billingEmail:"surya.k+p4@w3dev.email",
+    phoneNumber:"9999999999",
+    addressLine1:"test address",
+    addressLine2:"address demo",
+    city:"city",
+    state:"state",
+    postalCode:"777777"
+  }
+  await page.goto('https://dash.appreviewbot.com/auth/login?redirect_to=%2F');
+  await page.getByRole('textbox', { name: 'Email' }).click();
+  await page.getByRole('textbox', { name: 'Email' }).fill(userDetails.email);
+  await page.getByRole('button', { name: 'Continue' }).click();
+  await page.getByRole('button', { name: 'Login with Password instead' }).click();
+  await page.getByRole('button', { name: 'Continue with Password' }).click();
+  await page.getByRole('textbox', { name: 'Password' }).click();
+  await page.getByRole('textbox', { name: 'Password' }).fill(userDetails.password);
+  await page.getByRole('button', { name: 'Sign In' }).click();
+  await page.waitForTimeout(2000);
+  await expect(page.getByText('Track and manage all your app reviews in one place')).toBeVisible();
+  await page.waitForLoadState('domcontentloaded');
+  await page.waitForTimeout(2000);
+  await page.getByRole('link', { name: 'Settings' }).click();
+  await page.waitForTimeout(2000);
+  await page.getByRole('textbox', { name: 'Attn: (Name of Organization)', exact: true }).click();
+  await page.getByRole('textbox', { name: 'Attn: (Name of Organization)', exact: true }).fill(userDetails.organizationName);
+  await page.getByRole('textbox', { name: 'Billing Email' }).click();
+  await page.getByRole('textbox', { name: 'Billing Email' }).fill(userDetails.billingEmail);
+  await page.getByRole('textbox', { name: 'Phone Number' }).click();
+  await page.getByRole('textbox', { name: 'Phone Number' }).fill(userDetails.phoneNumber);
+  await page.getByRole('textbox', { name: 'Address Line 1' }).click();
+  await page.getByRole('textbox', { name: 'Address Line 1' }).fill(userDetails.addressLine1);
+  await page.getByRole('textbox', { name: 'Address Line 2' }).click();
+  await page.getByRole('textbox', { name: 'Address Line 2' }).fill(userDetails.addressLine2);
+  await page.getByRole('textbox', { name: 'City' }).click();
+  await page.getByRole('textbox', { name: 'City' }).fill(userDetails.city);
+  await page.getByRole('textbox', { name: 'State' }).click();
+  await page.getByRole('textbox', { name: 'State' }).fill(userDetails.state);
+  await page.getByRole('textbox', { name: 'Postal Code/ZIP' }).click();
+  await page.getByRole('textbox', { name: 'Postal Code/ZIP' }).fill(userDetails.postalCode);
+  await page.waitForTimeout(2000);
+});
