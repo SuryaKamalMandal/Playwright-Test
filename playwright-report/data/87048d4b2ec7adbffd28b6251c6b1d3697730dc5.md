@@ -1,0 +1,124 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "AppReviewBot" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img "AppReviewBot" [ref=e6]
+      - list [ref=e7]:
+        - listitem [ref=e8]:
+          - link "Pricing" [ref=e9] [cursor=pointer]:
+            - /url: /pricing/
+        - listitem [ref=e10]:
+          - link "Blog" [ref=e11] [cursor=pointer]:
+            - /url: /blog/
+        - listitem [ref=e12]:
+          - link "Contact" [ref=e13] [cursor=pointer]:
+            - /url: /contact/
+      - generic [ref=e14]:
+        - button "Start Free 14-Day Trial" [ref=e15] [cursor=pointer]
+        - link "Login" [active] [ref=e16] [cursor=pointer]:
+          - /url: /auth/login/?redirect_to=/auth/login/
+        - button [ref=e18]:
+          - img [ref=e20]
+          - img [ref=e50]
+  - main [ref=e52]:
+    - generic [ref=e57]:
+      - heading "Continue to AppReviewBot" [level=3] [ref=e58]
+      - paragraph [ref=e59]: Greetings on your return! Please enter your details.
+      - button "Continue with Google" [ref=e61]:
+        - generic [ref=e62]:
+          - img [ref=e63]
+          - generic [ref=e68]: Continue with Google
+      - generic [ref=e69]:
+        - generic [ref=e70]:
+          - generic [ref=e71]: Email
+          - textbox "pat@saturn.dev" [ref=e72]
+        - button "Continue" [ref=e74]
+        - paragraph [ref=e75]:
+          - text: By continuing, you agree to our
+          - link "Terms of Service" [ref=e76] [cursor=pointer]:
+            - /url: /terms/
+          - text: and
+          - link "Privacy Policy" [ref=e77] [cursor=pointer]:
+            - /url: /privacy/
+  - contentinfo [ref=e78]:
+    - generic [ref=e80]:
+      - generic [ref=e81]:
+        - link "AppReviewBot Home Page" [ref=e83] [cursor=pointer]:
+          - /url: /
+          - img "AppReviewBot" [ref=e84]
+        - separator [ref=e85]
+        - paragraph [ref=e86]: Turn feedback into five-star reviews with AppReviewBot
+      - generic [ref=e87]:
+        - generic [ref=e88]: Product
+        - list [ref=e89]:
+          - listitem [ref=e90]:
+            - link "Integration for Slack" [ref=e91] [cursor=pointer]:
+              - /url: /platform/slack/
+          - listitem [ref=e92]:
+            - link "Integration for MS Teams" [ref=e93] [cursor=pointer]:
+              - /url: /platform/microsoft-teams/
+          - listitem [ref=e94]:
+            - link "Integration for Mattermost" [ref=e95] [cursor=pointer]:
+              - /url: /platform/mattermost/
+          - listitem [ref=e96]:
+            - link "Integration for Discord" [ref=e97] [cursor=pointer]:
+              - /url: /platform/discord/
+          - listitem [ref=e98]:
+            - link "Integration for Webex" [ref=e99] [cursor=pointer]:
+              - /url: /platform/webex/
+          - listitem [ref=e100]:
+            - link "Integration for Zapier" [ref=e101] [cursor=pointer]:
+              - /url: /platform/zapier/
+          - listitem [ref=e102]:
+            - link "Pricing" [ref=e103] [cursor=pointer]:
+              - /url: /pricing/
+          - listitem [ref=e104]:
+            - link "FAQ" [ref=e105] [cursor=pointer]:
+              - /url: /faq/
+      - generic [ref=e106]:
+        - generic [ref=e107]: Company
+        - list [ref=e108]:
+          - listitem [ref=e109]:
+            - link "Privacy Policy" [ref=e110] [cursor=pointer]:
+              - /url: /privacy/
+          - listitem [ref=e111]:
+            - link "Terms of Service" [ref=e112] [cursor=pointer]:
+              - /url: /terms/
+          - listitem [ref=e113]:
+            - link "Data Processing Agreement" [ref=e114] [cursor=pointer]:
+              - /url: /dpa/
+          - listitem [ref=e115]:
+            - link "GDPR Compliance" [ref=e116] [cursor=pointer]:
+              - /url: /gdpr/
+      - generic [ref=e117]:
+        - generic [ref=e118]: Explore
+        - list [ref=e119]:
+          - listitem [ref=e120]:
+            - link "Get Reviews" [ref=e121] [cursor=pointer]:
+              - /url: /get-reviews/
+          - listitem [ref=e122]:
+            - link "Blog" [ref=e123] [cursor=pointer]:
+              - /url: /blog/
+          - listitem [ref=e124]
+        - generic [ref=e125]: Get in Touch
+        - list [ref=e126]:
+          - listitem [ref=e127]:
+            - link "Twitter" [ref=e128] [cursor=pointer]:
+              - /url: https://twitter.com/MyAppReviewBot
+          - listitem [ref=e129]:
+            - link "Contact Us" [ref=e130] [cursor=pointer]:
+              - /url: /contact/
+  - generic [ref=e132]:
+    - paragraph [ref=e134]:
+      - text: This website uses cookies to ensure you get the best experience on our website. Some cookies are necessary for the website to function properly, while others help us improve by providing insights into how the site is used.
+      - link "Privacy Policy" [ref=e135] [cursor=pointer]:
+        - /url: /privacy/
+    - generic [ref=e136]:
+      - button "Essential Only" [ref=e137]
+      - button "Accept All Cookies" [ref=e138]
+  - alert [ref=e139]: Login - AppReviewBot
+```

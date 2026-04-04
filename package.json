@@ -4,7 +4,7 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "codegen": "bunx playwright codegen https://dash.appreviewbot.com/",
+    "codegen": "bunx playwright codegen https://appreviewbot.com/",
     "test": "playwright test --project=chromium",
     "test:headless": "playwright test --headless",
     "test:ui": "playwright test --project=chromium --ui",

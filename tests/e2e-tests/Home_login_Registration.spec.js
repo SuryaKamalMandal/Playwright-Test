@@ -21,3 +21,23 @@ test('HomePage Login Success', async ({ page }) => {
   await page.waitForTimeout(2000);
   await expect(page.getByText('Logged in as surya.k+p4@w3dev')).toBeVisible();
 });
+
+test('Login with Invalid Password', async ({ page }) => {
+  const userDetails = {
+    email:"surya.k+p4@w3dev.email",
+    wrongpassword:"surya",
+  }
+  await page.goto('https://www.appreviewbot.com/');
+  await page.waitForTimeout(2000);
+  await page.waitForLoadState('domcontentloaded');
+  await page.waitForTimeout(2000);
+  await page.getByRole('link', { name: 'Login' }).click();
+  await page.getByRole('textbox', { name: 'pat@saturn.dev' }).click();
+  await page.getByRole('textbox', { name: 'pat@saturn.dev' }).fill(userDetails.email);
+  await page.getByRole('button', { name: 'Continue', exact: true }).click();
+  await page.getByRole('textbox', { name: '********' }).click();
+  await page.getByRole('textbox', { name: '********' }).fill(userDetails.wrongpassword);
+  await page.getByRole('button', { name: 'Login', exact: true }).click();
+  //await expect(page.getByText('Invalid login credentials')).toBeVisible();
+  await page.waitForTimeout(2000);
+});
