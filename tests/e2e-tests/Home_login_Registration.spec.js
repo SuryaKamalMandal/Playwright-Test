@@ -27,7 +27,7 @@ test('Login with Invalid Password', async ({ page }) => {
     email:"surya.k+p4@w3dev.email",
     wrongpassword:"surya",
   }
-  await page.goto('https://www.appreviewbot.com/');
+  await page.goto('https://dev-arb-home.vercel.app/');
   await page.waitForTimeout(2000);
   await page.waitForLoadState('domcontentloaded');
   await page.waitForTimeout(2000);

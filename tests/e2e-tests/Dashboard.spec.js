@@ -245,3 +245,29 @@ test('Updating the Organization Details', async ({ page }) => {
   await page.getByRole('textbox', { name: 'Postal Code/ZIP' }).fill(userDetails.postalCode);
   await page.waitForTimeout(2000);
 });
+
+test('Generating the API Key', async ({ page }) => {
+  const userDetails = {
+    email:"surya.k+p4@w3dev.email",
+    password:"suryasurya"
+  }
+
+  await page.goto('https://dash.appreviewbot.com/auth/login?redirect_to=%2F');
+  await page.getByRole('textbox', { name: 'Email' }).click();
+  await page.getByRole('textbox', { name: 'Email' }).fill(userDetails.email);
+  await page.getByRole('button', { name: 'Continue' }).click();
+  await page.getByRole('button', { name: 'Login with Password instead' }).click();
+  await page.getByRole('button', { name: 'Continue with Password' }).click();
+  await page.getByRole('textbox', { name: 'Password' }).click();
+  await page.getByRole('textbox', { name: 'Password' }).fill(userDetails.password);
+  await page.getByRole('button', { name: 'Sign In' }).click();
+  await page.waitForTimeout(2000);
+  await expect(page.getByText('Track and manage all your app reviews in one place')).toBeVisible();
+  await page.waitForLoadState('domcontentloaded');
+  await page.waitForTimeout(2000);
+  await page.getByRole('link', { name: 'Settings' }).click();
+  await page.waitForTimeout(2000);
+  //await page.getByRole('textbox', { name: 'No API key generated' }).click();
+  await expect(page.getByText('Generate Key')).toBeVisible();
+  await page.waitForTimeout(2000);
+});
